@@ -77,5 +77,5 @@ def recommend():
     # Return the recommendations
     return jsonify(recommended_questions)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
