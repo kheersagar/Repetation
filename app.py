@@ -4,6 +4,7 @@ import re
 from nltk.corpus import stopwords
 stop_words = set(stopwords.words('english'))
 from nltk.stem import WordNetLemmatizer
+nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 from flask import Flask, jsonify, request, render_template
 import pandas as pd
@@ -15,7 +16,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 
 # Load the data and preprocess it
-df = pd.read_csv(r'C:\Users\sonali\Downloads\recommendation_project_2.0\recommendation_project_\Aptitude all set.csv')
+df = pd.read_csv(r'Aptitude all set.csv')
 Id = list(range(0, 85))
 df['Id'] = Id
 
@@ -51,6 +52,10 @@ vectors_df = pd.DataFrame.sparse.from_spmatrix(vectors)
 
 # Calculate cosine similarity matrix
 cosine_sim = cosine_similarity(vectors)
+
+@app.route("/",methods=['GET'])
+def home():
+    return "Hello"
 
 @app.route('/recommend', methods=['POST'])
 def recommend():
