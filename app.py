@@ -2,6 +2,7 @@ import nltk
 import requests
 import re
 from nltk.corpus import stopwords
+nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 from nltk.stem import WordNetLemmatizer
 nltk.download('wordnet')
