@@ -56,7 +56,7 @@ cosine_sim = cosine_similarity(vectors)
 @app.route("/",methods=['GET'])
 def home():
     return "Hello"
-
+    
 @app.route('/recommend', methods=['POST'])
 def recommend():
     # Parse the input
@@ -77,5 +77,5 @@ def recommend():
     # Return the recommendations
     return jsonify(recommended_questions)
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
