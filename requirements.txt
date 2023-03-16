@@ -10,7 +10,7 @@ joblib
 MarkupSafe
 nltk
 numpy
-panda
+pandas
 python-dateutil
 pytz
 regex
