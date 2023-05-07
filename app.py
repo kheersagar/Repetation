@@ -1,7 +1,12 @@
 import nltk
 import requests
 import re
-from nltk.corpus import stopwords
+try:
+    from nltk.corpus import stopwords
+except:
+    nltk.download('stopwords')
+    from nltk.corpus import stopwords
+    
 stop_words = set(stopwords.words('english'))
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
@@ -32,7 +37,7 @@ def calculate_score():
         points = []
     else:
         points = [*point]
-        
+
     value = find_values_of_x(level, is_correct)
     points.append(value)
 
